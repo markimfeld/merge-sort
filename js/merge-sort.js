@@ -1,55 +1,20 @@
-// const merge = (A, B, m, n) => {
-//   let C = [];
-//   let k = 0;
+const btnNavBar = document.getElementById("btn-nav-bar");
 
-//   let i = 0;
-//   let j = 0;
+const sideNav = document.getElementById("side-nav");
+const mainContent = document.getElementsByClassName("hide");
 
-//   while (i < m && j < n) {
-//     if (A[i] < B[j]) {
-//       C[k++] = A[i++];
-//     } else {
-//       C[k++] = B[j++];
-//     }
-//   }
+btnNavBar.addEventListener(("click"), () => {
+  sideNav.style.transform = `translateX(0%)`;
+  for (let e of mainContent) {
+    e.style.opacity = 0.4;
+  }
+});
 
-//   for (; i < m; i++) {
-//     C[k++] = A[i];
-//   }
-//   for (; j < n; j++) {
-//     C[k++] = B[j];
-//   }
+const btnNavClose = document.getElementById("btn-nav-close");
 
-//   return C;
-// }
-
-// let A = [2, 8, 15, 18, 105];
-// let B = [5, 9, 12, 17, 25, 98];
-
-// let C = merge(A, B, A.length, B.length);
-
-
-// // console.log(C);
-
-
-// const countdown = n => {
-//   console.log(n);
-//   if (n <= 1) {
-//     return;
-//   } else {
-//     setTimeout(() => {
-//       countdown(n - 1);
-//     }, 1000);
-//   }
-// }
-
-// // countdown(5);
-
-// // n! = n · (n - 1) · (n - 2) ··· 3 · 2 · 1
-
-// const factorial = n => {
-//   if (n === 1 || n === 0) return 1;
-//   return n * factorial((n - 1))
-// }
-
-// console.log(factorial(4));
+btnNavClose.addEventListener(("click"), () => {
+  sideNav.style.transform = `translateX(-100%)`;
+  for (let e of mainContent) {
+    e.style.opacity = 1;
+  }
+});

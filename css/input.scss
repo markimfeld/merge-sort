@@ -34,11 +34,53 @@ body {
     height: 100vh;
     display: grid;
     // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 0.7fr 4fr 1fr;
     grid-template-areas:
       "header"
       "content"
       "footer";
+
+    .side-nav {
+      display: grid;
+      grid-template-rows: 2fr 1fr 0.5fr;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      color: $light;
+
+      height: 100vh;
+      width: 60%;
+      background-color: #171717;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition-duration: 500ms;
+      transition-timing-function: ease-in-out;
+
+      .top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        padding: 0.6rem;
+        font-size: 0.8rem;
+      }
+
+      .btn-save {
+        border: 0;
+        padding: 0.5rem 3rem;
+        background-image: $btn-color-primary;
+        color: $light;
+        border-radius: 0.4rem;
+      }
+    }
 
     .header {
       display: grid;
@@ -53,6 +95,12 @@ body {
         justify-self: start;
         border: 1px solid $light;
         padding: 0.5rem;
+        transition-duration: 300ms;
+      }
+
+      .fas:hover {
+        background-color: $light;
+        color: var(--dark);
       }
 
       .site-title {
@@ -75,14 +123,14 @@ body {
     .main-content {
       grid-area: content;
       display: inline-block;
-      margin-top: 10px;
-
+      margin: 1rem auto;
       .lista {
         display: flex;
         overflow-x: auto;
         justify-content: center;
+        align-items: center;
 
-        .item {
+        .item > p {
           background-color: var(--lightred);
           display: inline-block;
           margin: 0 5px;

@@ -14,31 +14,46 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <!-- Wrapper -->
-  <div class="wrapper">
+  <div id="wrapper" class="wrapper">
+    <!-- side nav -->
+    <div id="side-nav" class="side-nav">
+      <div class="top">
+        <i id="btn-nav-close" class="fas fa-times"></i>
+        <h2>Settings</h2>
+        <p>Array to sort:</p>
+        <input type="text" id="" placeholder="[0,1,2,3,4,...] - Min lengh: 2" />
+        <p>Animation timeout:</p>
+        <input type="number" placeholder="Miliseconds" />
+      </div>
+      <div class="errors"></div>
+      <button class="btn-save" type="submit">Save</button>
+    </div>
+    <!-- end side nav -->
+
     <!-- Header -->
-    <header class="header">
-      <i class="fas fa-bars fa-1x"></i>
+    <header class="header hide">
+      <i id="btn-nav-bar" class="fas fa-bars fa-1x"></i>
       <h1 class="site-title">Merge Sort Visualization</h1>
     </header>
     <!--  End Header -->
 
     <!-- Main content -->
-    <main class="main-content">
+    <main class="main-content hide">
       <div class="lista">
-        <div class="item">2</div>
-        <div class="item">9</div>
-        <div class="item">5</div>
-        <div class="item">3</div>
-        <div class="item">1</div>
-        <div class="item">7</div>
-        <div class="item">3</div>
-        <div class="item">6</div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>9</p></div>
+        <div class="item"><p>5</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>7</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>6</p></div>
       </div>
     </main>
     <!-- End content -->
 
     <!-- Footer with button -->
-    <footer class="footer">
+    <footer class="footer hide">
       <button class="btn primary" type="submit">Sort</button>
       <button class="btn secondary" type="submit">Unsort</button>
     </footer>
