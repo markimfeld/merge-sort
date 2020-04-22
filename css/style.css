@@ -14,6 +14,7 @@ html {
 body {
   background-color: #212326;
   margin: 0 30px;
+  position: relative;
 }
 body .wrapper {
   height: 100vh;
@@ -31,7 +32,7 @@ body .wrapper .side-nav {
   height: 100vh;
   width: 60%;
   background-color: #171717;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -46,7 +47,7 @@ body .wrapper .side-nav .top {
   justify-content: center;
 }
 body .wrapper .side-nav input {
-  width: 100%;
+  width: 80%;
   border: none;
   padding: 0.6rem;
   font-size: 0.8rem;
@@ -98,11 +99,11 @@ body .wrapper .main-content {
 }
 body .wrapper .main-content .lista {
   display: flex;
-  overflow-x: auto;
   justify-content: center;
   align-items: center;
+  background-color: burlywood;
 }
-body .wrapper .main-content .lista .item > p {
+body .wrapper .main-content .lista .item p {
   background-color: var(--lightred);
   display: inline-block;
   margin: 0 5px;
