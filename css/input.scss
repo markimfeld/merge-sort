@@ -36,7 +36,7 @@ body {
     display: grid;
 
     // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: 0.7fr 4fr 1fr;
+    grid-template-rows: 0.5fr 2fr 1fr;
     grid-template-areas:
       "header"
       "content"
