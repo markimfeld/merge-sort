@@ -1,0 +1,122 @@
+:root {
+  --lightgreen: #5cce16;
+  --darkgreen: #1e8900;
+  --darkred: #b90100;
+  --lightred: #d31e1d;
+  --dark: #333;
+}
+$light: white;
+$text-btn-color: white;
+$btn-color-primary: linear-gradient(
+  to right,
+  var(--lightgreen),
+  var(--darkgreen)
+);
+
+$btn-color-secondary: linear-gradient(
+  to right,
+  var(--darkred),
+  var(--lightred)
+);
+
+$font-general: "sans-serif", "Helvetica";
+
+html {
+  font-family: $font-general;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #212326;
+  margin: 0 30px;
+
+  .wrapper {
+    height: 100vh;
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas:
+      "header"
+      "content"
+      "footer";
+
+    .header {
+      display: grid;
+      grid-area: header;
+      grid-template-columns: 1fr 2fr 1fr;
+      align-items: center;
+      justify-items: center;
+      position: relative;
+
+      .fas {
+        color: $light;
+        justify-self: start;
+        border: 1px solid $light;
+        padding: 0.5rem;
+      }
+
+      .site-title {
+        color: $light;
+        text-align: center;
+        font-size: 1.2rem;
+      }
+    }
+
+    .header::after {
+      content: "";
+      display: block;
+      width: 105%;
+      height: 1px;
+      bottom: 0;
+      background-image: $btn-color-primary;
+      position: absolute;
+    }
+
+    .main-content {
+      grid-area: content;
+      display: inline-block;
+      margin-top: 10px;
+
+      .lista {
+        display: flex;
+        overflow-x: auto;
+        justify-content: center;
+
+        .item {
+          background-color: var(--lightred);
+          display: inline-block;
+          margin: 0 5px;
+          padding: 10px 15px;
+          color: var(--dark);
+        }
+      }
+    }
+
+    .footer {
+      // grid child styles
+      grid-area: footer;
+
+      // styles items itself
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      justify-items: center;
+
+      .btn {
+        width: 70%;
+        padding: 1.2rem 0;
+        font-size: 1.2rem;
+        border-radius: 15px;
+        border: none;
+        color: white;
+      }
+    }
+
+    .primary {
+      background-image: $btn-color-primary;
+    }
+    .secondary {
+      background-image: $btn-color-secondary;
+    }
+  }
+}
