@@ -1,4 +1,7 @@
-# merge-sort
+# Merge-sort
+
 Animating merge sort.
 
-This is an animation of Merge Sort.
+Using:
+- Jquery.
+- Sass.
