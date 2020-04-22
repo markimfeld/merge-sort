@@ -124,18 +124,19 @@ body {
 
     .main-content {
       grid-area: content;
-      display: inline-block;
-      margin: 1rem auto;
+      display: block;
+      margin: 1rem 0 0 0;
+      overflow-x: auto;
+      overflow-y: hidden;
 
       .lista {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: burlywood;
 
-        .item p {
+        .item {
           background-color: var(--lightred);
-          display: inline-block;
+          // display: inline-block;
           margin: 0 5px;
           padding: 10px 15px;
           color: var(--dark);

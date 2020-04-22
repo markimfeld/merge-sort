@@ -94,18 +94,18 @@ body .wrapper .header::after {
 }
 body .wrapper .main-content {
   grid-area: content;
-  display: inline-block;
-  margin: 1rem auto;
+  display: block;
+  margin: 1rem 0 0 0;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 body .wrapper .main-content .lista {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: burlywood;
 }
-body .wrapper .main-content .lista .item p {
+body .wrapper .main-content .lista .item {
   background-color: var(--lightred);
-  display: inline-block;
   margin: 0 5px;
   padding: 10px 15px;
   color: var(--dark);
