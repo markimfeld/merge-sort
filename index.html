@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     ></script> -->
     <link rel="stylesheet" href="vendor/css/fontawesome.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="sass/style.css" />
   </head>
   <!-- Wrapper -->
   <div id="wrapper" class="wrapper">
@@ -21,12 +21,25 @@
         <i id="btn-nav-close" class="fas fa-times"></i>
         <h2>Settings</h2>
         <p>Array to sort:</p>
-        <input type="text" id="" placeholder="[0,1,2,3,4,...] - Min lengh: 2" />
+        <input
+          type="text"
+          id="input-array"
+          placeholder="0,1,2,3,4,... - Min lengh: 2"
+        />
         <p>Animation timeout:</p>
-        <input type="number" placeholder="Miliseconds" />
+        <input
+          type="number"
+          id="input-timing-animation"
+          placeholder="Miliseconds"
+        />
       </div>
-      <div class="errors"></div>
-      <button class="btn-save" type="submit">Save</button>
+      <div id="message-nav" class="message">
+        <p class="errors">
+          <i class="fas fa-exclamation-circle"></i>Something is wrong!
+        </p>
+        <p class="saved"><i class="fas fa-check-circle"></i>Saved!</p>
+      </div>
+      <button id="btn-save" class="btn-save" type="submit">Save</button>
     </div>
     <!-- end side nav -->
 
@@ -39,27 +52,31 @@
 
     <!-- Main content -->
     <main class="main-content hide">
-      <div class="lista">
+      <div id="array" class="lista">
         <p class="item">2</p>
         <p class="item">9</p>
         <p class="item">5</p>
         <p class="item">3</p>
-        <p class="item">1</p>
-        <p class="item">7</p>
-        <p class="item">3</p>
-        <p class="item">6</p>
       </div>
     </main>
     <!-- End content -->
 
     <!-- Footer with button -->
     <footer class="footer hide">
-      <button class="btn primary" type="submit">Sort</button>
-      <button class="btn secondary" type="submit">Unsort</button>
+      <button id="btn-sort" class="btn primary" type="submit">Sort</button>
+      <button id="btn-unsort" class="btn secondary" type="submit">
+        Unsort
+      </button>
     </footer>
     <!-- End footer -->
   </div>
   <!-- End wrapper -->
+  <script
+    src="//code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
   <script src="js/merge-sort.js"></script>
+  "
   <body></body>
 </html>
