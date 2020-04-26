@@ -1,5 +1,44 @@
 $(document).ready(function () {
 
+
+  const merge = (A, B) => {
+    let i = 0;
+    let j = 0;
+    let k = 0;
+    let C = [];
+
+    while(i < A.length && j < B.length) {
+      if(A[i].innerText < B[j].innerText) {
+        C[k++] = A[i++];
+      } else {
+        C[k++] = B[j++];
+      }
+    }
+
+    for(; i < A.length; i++) {
+      C[k++] = A[i];
+    }
+
+    for(; j < B.length; j++) {
+      C[k++] = B[j];
+    }
+
+    return C;
+  }
+
+  const mergeSort = A => {
+    
+    if(A.length == 1) return A;
+
+    let l1 = A.slice(0, A.length/2);
+    let l2 = A.slice((A.length/2), A.length);
+    
+    l1 = mergeSort(l1);
+    l2 = mergeSort(l2);
+
+    return merge(l1, l2);
+  }
+
   const getRandomArray = (min, max) => {
     return Math.floor(Math.random() * max) + min;
   }
@@ -93,10 +132,13 @@ $(document).ready(function () {
   $("#btn-sort").click(() => {
     let arr = $("#array").children().toArray();
 
+    $("#array").children().remove();
 
+    let newArray = mergeSort(arr);
 
-    console.log(arr);
-
+    for(i of newArray) {
+      createItem(i.innerText);
+    }
 
   })
 
@@ -137,7 +179,6 @@ $(document).ready(function () {
       createItem(i[1]);
     }
   })
-
 });
 
 
