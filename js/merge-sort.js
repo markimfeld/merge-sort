@@ -138,6 +138,7 @@ $(document).ready(function () {
 
     for(i of newArray) {
       createItem(i.innerText);
+      $(".item").css("background-color", "var(--lightgreen");
     }
 
   })
