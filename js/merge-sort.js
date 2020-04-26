@@ -91,6 +91,12 @@ $(document).ready(function () {
 
 
   $("#btn-sort").click(() => {
+    let arr = $("#array").children().toArray();
+
+
+
+    console.log(arr);
+
 
   })
 
